@@ -22,7 +22,9 @@ class TodoItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Checkbox(value: false, onChanged: (value) {}),
+            Checkbox(value: false, onChanged: (value) {
+              
+            }),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

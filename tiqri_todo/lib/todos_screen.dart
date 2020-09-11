@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiqri_todo/common/styles.dart';
+import 'package:tiqri_todo/db/database.dart';
+import 'package:tiqri_todo/todo_screen.dart';
 import 'package:tiqri_todo/ui/todo_item.dart';
 
 class ToDosScreen extends StatefulWidget {
@@ -10,6 +12,8 @@ class ToDosScreen extends StatefulWidget {
 }
 
 class _ToDosScreenState extends State<ToDosScreen> {
+  final databaseProvider = DatabaseProvider.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +24,20 @@ class _ToDosScreenState extends State<ToDosScreen> {
         ),
       ),
       body: Container(
-        child: ListView.builder(
-          itemCount: 100,
-          itemBuilder: (BuildContext context, int index) {
-            return TodoItem("First", "this is our first todo");
+        child: FutureBuilder(
+          future: databaseProvider.getAll(),
+          initialData: [],
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return ListView.builder(
+                itemCount: snapshot.data.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return TodoItem("", snapshot.data[index]["content"]);
+                },
+              );
+            } else {
+              return Container();
+            }
           },
         ),
       ),
@@ -31,7 +45,11 @@ class _ToDosScreenState extends State<ToDosScreen> {
           child: Icon(
             Icons.add,
           ),
-          onPressed: () {}),
+          onPressed: () async {
+            await Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TodoScreen()));
+            setState(() {});
+          }),
     );
   }
 }
