@@ -33,8 +33,8 @@ class _ToDosScreenState extends State<ToDosScreen> {
               return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
-                  final todo = ToDo.fromMap(snapshot.data[index]);
-                  return TodoItem(todo, (ToDo todo, bool done) {
+                  return TodoItem(ToDo.fromMap(snapshot.data[index]),
+                      (ToDo todo, bool done) {
                     print(todo.toString());
                     databaseProvider
                         .update({"id": todo.id, "done": todo.done ? 1 : 0});
