@@ -5,6 +5,10 @@ class TodoStyles {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
-  static const todoDescriptionStyle = TextStyle(fontSize: 16);
-  static const todoTitleStyle = TextStyle(fontSize: 18);
+  static const todoDescriptionStyle = TextStyle(
+    fontSize: 16,
+  );
+  static const todoTitleStyle = TextStyle(
+    fontSize: 18,
+  );
 }

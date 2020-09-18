@@ -31,7 +31,6 @@ class _TodoScreenState extends State<TodoScreen> {
               onPressed: () {
                 save();
               }),
-          IconButton(icon: Icon(Icons.delete), onPressed: () {}),
         ],
       ),
       body: Container(
