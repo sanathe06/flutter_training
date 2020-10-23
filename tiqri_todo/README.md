@@ -2,15 +2,11 @@
 
 A new Flutter project.
 
-## Getting Started
+## Assignment
 
-This project is a starting point for a Flutter application.
+- ### Design app which can use daily basis. simple idea.
+- ### Create Flutter project with decent UI. it should consists at-least two screens.
+- ### Should use database or api.
+- ### At-least one animation.
+- ### Add app icon and should be ready to pulish in market place.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
